@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<body>
+    <div id="app">
+       <h1>{{name}}</h1>
+       <input v-model = "name">
+       <button v-on:click = "myalert">按钮</button>
+       <button @click = "myalert()">按钮2</button>
+       <button @click = "myalert(666)">按钮3</button>
+       <button @click = "myalert(777,666,$event,888,name)">按钮4</button>
+    </div>
+    
+</body>                                
+</html>
+<script>
+new Vue({
+    el:'#app',
+    data:{         
+        name:"王峰cn"
+    },               
+    methods:{
+        myalert(e){
+            console.log(this.name,e);
+            console.log(arguments);    
+    }
+  }
+})
+</script>

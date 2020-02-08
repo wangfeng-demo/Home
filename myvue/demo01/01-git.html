@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--  
+    版本管理器：分布式的版本管理器，Git SVN
+    git把自己的电脑当做一个仓库，svn把所有版本放在了远程服务器中，是集中式的版本管理。
+    git config --global ueser.name    //自己的github用户名 本次用来做本地用户名
+    git config --global ueser.email   //自己的github邮箱本次用来做初始化邮箱使用
+
+    git config --list 是查看是否设置成功的操作
+    git status 是用来查看本地仓库状态的一个命令
+    git init 是把本地的文件夹初始化成了一个Git仓    库
+    红色代表本地有修改的文件没有提交
+    绿色代表本地有修改，但是被提交到了暂存区
+
+    git 仓库有三个区：工作区，缓存区， 历史区
+    平时修改(编写)代码都是在工作区完成，
+    git add （+对应文件名）  就是把某个文件修改后的内容提交到缓存区
+    git add.  把当前仓库里的所有文件都提交了
+    git commit -m '备注' 把缓存区的内容提交到历史区
+
+    github 就是一个使用Git工具的远程仓库，
+    GitLab 码云 基于Git的代码托管平台
+    想把历史区的内容提交到远程仓库 就自己在github新建一个仓库就行了
+
+    git remote add （+桥梁名）  远程仓库地址
+    git remote add origin https://github.com/wangfeng-demo/Home.git
+   
+    git push 相当于写了git push origin 把历史区通过origin桥梁推到远程
+
+
+
+*************************** add---- commit---- push  这是流程  ***************************
+    先在本地创建一个文件夹，作为你的项目（英文名字） 
+        git init 把文件夹变成git仓库
+        ...增删改
+        git add .  把工作区所有修改的文件提交到了缓存区
+        git commit -m '备注内容'   把缓存区的内容提交到历史区
+        
+    下一步  把历史区的代码提交到远程仓库
+            首先要在远程建一个仓库
+            然后在本地执行 git remote add origin 远程仓库地址
+            上述命令，是把本地仓库和远程仓库建立连接
+    
+    git push 把本地代码推到远程仓库
+        第一次执行该命令时，会出现一个提示 gitpush --set-upstream origin master
+        运行这个命令，会提示出入用户名和密码，正常输入就可提交到远程仓库
+        上述提示，在整个项目中，只会出现一次，运行过就不会在出现。
+        以后正常使用git push即可。     
+        
+*****************************************  克隆  ******************************************
+        克隆别人的项目: git clone 别人的仓库地址
+        git 克隆动作只需要做一次，以后再相同步别人远程仓库的内容，我们只需要运行git pull
+
+******************************  常用的Linux命令  ******************************************
+        ls 查看当前文件夹下面的文件目录
+        cd 是用来切换目录的
+        cd ../是回到上一级目录的
+        mkdir 是创建一个新的文件夹
+        touch 是创建一个新的文件
+        vi 是编写文件内容 按i编辑，esc退出，输入：wq保存退出
+        cat 是查看文件内容
+        rm 是删除文件 这种删除方式在回收站中是没有体现的
+        rmdir 是删除一个文件夹    
+        
+       
+-->
+</body>
+</html>
+<script>
+    常用的正则表达式
+
+验证是否为有效数字
+
+/*
+ * 规则分析
+ * 1.可能出现 + - 号，也可能不出现  [+-]?
+ * 2.一位0-9都可以，多位首位不能是0 (\d|([1-9]\d+))
+ * 3.小数部分可能有可能没有，一旦有后面必须有小数点+数字 (\.\d+)?
+ */
+let reg = /^[+-]?(\d|([1-9]\d+))(\.\d+)?$/;
+
+</script>
